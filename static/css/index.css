@@ -1,0 +1,465 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.publication-title {
+  max-width: 1400px;
+  width: 90vw;
+  white-space: normal;
+  word-break: break-word;
+  margin: 0 auto;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+
+.compact-table {
+  font-size: 0.80rem;
+  line-height: 1.0;
+  width: 100% !important;        /* 占满父容器宽度 */
+  max-width: 100vw !important;   /* 避免溢出视口 */
+  table-layout: auto !important; /* 根据内容分配宽度，必要时可以用fixed以保证列对齐 */
+}
+
+
+
+
+/* .compact-table th,
+.compact-table td {
+  padding: 0px 1px !important;
+  font-size: 0.72rem;
+  line-height: 1.0;
+  white-space: nowrap;
+  text-align: center;
+} */
+
+.compact-table th,
+.compact-table td {
+  padding: 0 1px !important;
+  height: 28px;
+  line-height: 28px;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  text-align: center;
+  text-align: center !important;      /* 水平居中 */
+  vertical-align: middle !important;  /* 垂直居中 */
+}
+
+
+  .compact-table {
+    font-size: 1rem; /* 你想要的大小 */
+  }
+  .title.is-3 {
+    font-size: 1.8rem;
+  }
+
+.compact-table caption {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1700px) {
+  .compact-table {
+    font-size: 0.70rem;
+  }
+}
+
+
+.compact-table caption {
+  text-align: left;
+  caption-side: top;
+  padding-left: 0;
+  line-height: 1.4; /* 可以调整为 1.4 ~ 2 之间的值，根据你想要的行距 */
+}
+
+
+/* 这里每一列一个颜色，你可以自己调色 */
+/* .col-diff          { background: #f6f8fa !important; }
+.col-model         { background: #e8f6fa !important; }
+.col-size          { background: #fffbe7 !important; }
+.col-avg           { background: #eafaf0 !important; }
+.col-short-avg     { background: #fdf1fa !important; }
+.col-short-temp    { background: #f0f3fd !important; }
+.col-short-spatial { background: #e0fcf7 !important; }
+.col-short-intent  { background: #f9f5d7 !important; }
+.col-medium-avg    { background: #ecf0f1 !important; }
+.col-medium-temp   { background: #e5eafc !important; }
+.col-medium-spatial{ background: #e7f7ee !important; }
+.col-medium-intent { background: #fcf6e4 !important; }
+.col-long-avg      { background: #e8f7ff !important; }
+.col-long-temp     { background: #f0eafc !important; }
+.col-long-spatial  { background: #fcefe8 !important; }
+.col-long-intent   { background: #f5eefa !important; } */
+
+/* 粉紫渐变（由浅到深） */
+/* .col-diff          { background: #fce4ec !important; }   very light pink */
+/* .col-model         { background: #f8bbd0 !important; }
+.col-size          { background: #f48fb1 !important; }
+.col-avg           { background: #f06292 !important; }
+.col-short-avg     { background: #ec407a !important; } */
+/* .col-short-temp    { background: #e040fb !important; }   violet/purple */
+/* .col-short-spatial { background: #ab47bc !important; }
+.col-short-intent  { background: #8e24aa !important; }
+.col-medium-avg    { background: #ba68c8 !important; }
+.col-medium-temp   { background: #ce93d8 !important; }
+.col-medium-spatial{ background: #d1c4e9 !important; }
+.col-medium-intent { background: #b39ddb !important; }
+.col-long-avg      { background: #9575cd !important; }
+.col-long-temp     { background: #7e57c2 !important; }
+.col-long-spatial  { background: #673ab7 !important; } */
+/* .col-long-intent   { background: #512da8 !important; }   darkest purple */
+
+/* very light pink */
+/* .col-diff          { background: #fce4ec !important; }   
+.col-model         { background: #f8bbd0 !important; }
+.col-size          { background: #f3c6e7 !important; }
+.col-avg           { background: #e9bdfc !important; }
+.col-short-avg     { background: #e1c4f7 !important; }
+.col-short-temp    { background: #dbcaf7 !important; }
+.col-short-spatial { background: #d6d1f5 !important; }
+.col-short-intent  { background: #d2d7fa !important; }
+.col-medium-avg    { background: #cecffa !important; }
+.col-medium-temp   { background: #cbc5f6 !important; }
+.col-medium-spatial{ background: #c5c0ed !important; }
+.col-medium-intent { background: #bfc3eb !important; }
+.col-long-avg      { background: #bab7e7 !important; }
+.col-long-temp     { background: #b0ace5 !important; }
+.col-long-spatial  { background: #ada7e3 !important; }
+.col-long-intent   { background: #c5bbee !important; }    */
+
+/* 粉红到浅蓝色淡色系渐变，每列不同 */
+/* .col-diff          { background: #fce4ec !important; } 
+.col-model         { background: #f8bbd0 !important; }  
+.col-size          { background: #ecd6f9 !important; }  
+.col-avg           { background: #e1d7fa !important; }  
+.col-short-avg     { background: #d6e4fa !important; }  
+.col-short-temp    { background: #cee6fa !important; }  
+.col-short-spatial { background: #c7eafa !important; }  
+.col-short-intent  { background: #c3effa !important; }
+.col-medium-avg    { background: #bde5f6 !important; }
+.col-medium-temp   { background: #b1e2f7 !important; }
+.col-medium-spatial{ background: #a6ddf7 !important; }
+.col-medium-intent { background: #9ddaf7 !important; }
+.col-long-avg      { background: #8fd2f6 !important; }
+.col-long-temp     { background: #7fcaf6 !important; }
+.col-long-spatial  { background: #70c2f4 !important; }
+.col-long-intent   { background: #61bbf4 !important; }   */
+
+
+.col-diff          { background: #e3f3fd !important; }  /* very light blue */
+.col-model         { background: #d0ebfa !important; }  /* light blue */
+.col-size          { background: #dce8fa !important; }  /* blue-lavender */
+.col-avg           { background: #e6e6fa !important; }  /* lavender */
+.col-short-avg     { background: #f0e6fa !important; }  /* 淡紫 */
+.col-short-temp    { background: #f7e6fa !important; }  /* 淡紫偏粉 */
+.col-short-spatial { background: #fae6f4 !important; }  /* 粉紫 */
+.col-short-intent  { background: #fae6ec !important; }  /* very light pink */
+.col-medium-avg    { background: #fae6e6 !important; }
+.col-medium-temp   { background: #fae6eb !important; }
+.col-medium-spatial{ background: #fae6f2 !important; }
+.col-medium-intent { background: #fae6f8 !important; }
+.col-long-avg      { background: #fbe6fa !important; }
+.col-long-temp     { background: #fde6fa !important; }
+.col-long-spatial  { background: #fee6fa !important; }
+.col-long-intent   { background: #ffe6fa !important; }  /* very light pink */
+
+
+
+.model-gold { color: #d4af37; font-weight: bold; }
+
+
+.cell-highlight {
+  background-color: #ffeb3b;  /* 亮黄色 */
+}
+.cell-green {
+  background-color: #b2fab4;  /* 亮绿色 */
+}
+.cell-red {
+  background-color: #ffcdd2;  /* 淡红色 */
+}
+
+.cell-darkgray {
+  background-color: #444444;  /* 深灰色 */
+  color: #fff;                /* 文字用白色，易读 */
+}
+
+.cell-lightgray {
+  background-color: #eeeeee !important;  /* 浅灰色 */
+  color: #222;                /* 文字深色，更清楚 */
+}
+
+
+
+
+
+
+.video-carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 10px;              /* 视频之间间距 */
+  padding-bottom: 8px;    /* 底部留白，美观 */
+  scrollbar-width: thin;  /* firefox窄滚动条 */
+}
+.video-carousel::-webkit-scrollbar {
+  height: 8px;            /* chrome窄滚动条 */
+}
+.video-slide {
+  flex: 0 0 auto;         /* 保持宽度不变，防止被缩放 */
+  width: 220px;           /* 每个视频的宽度，可根据需求调整 */
+  height: 140px;          /* 视频高度，也可自适应 */
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+  object-fit: cover;
+}
+
+.video-slide-scroll {
+  width: 210px;
+  height: 200px;
+  margin-right: 12px;
+  border-radius: 8px;
+  background: #000;
+  object-fit: contain; /* 保证低分辨率视频不会被拉伸变形 */
+}
+
+
+
+
+
+
+
+
+.video-carousel-scroll {
+  width: 100vw;
+  overflow: hidden;
+  background: #fff;
+  margin: 0 auto;
+  /* 用最小高度适配移动端 */
+  min-height: 150px;
+  height: 220px; /* 可根据需要调整 */
+  position: relative;
+}
+
+.video-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+  align-items: center;
+  will-change: transform;
+}
+
+/* Hover时动画暂停 */
+.video-carousel-scroll:hover .video-track {
+  animation-play-state: paused;
+}
+
+.video-slide-scroll {
+  width: 210px;
+  height: 200px;
+  margin-right: 12px;
+  border-radius: 8px;
+  background: #000;
+  object-fit: cover;
+  transition: transform 0.15s;
+}
+
+/* 鼠标悬停单个视频轻微放大 */
+.video-slide-scroll:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* 响应式宽高调整：平板/手机上自动缩小 */
+@media (max-width: 1024px) {
+  .video-slide-scroll {
+    width: 140px;
+    height: 120px;
+    margin-right: 8px;
+  }
+  .video-carousel-scroll {
+    height: 140px;
+    min-height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-slide-scroll {
+    width: 90px;
+    height: 68px;
+    margin-right: 4px;
+  }
+  .video-carousel-scroll {
+    height: 72px;
+    min-height: 40px;
+  }
+}
+
+/* 无限滚动动画 */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+
+
+
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}

@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AccidentBench: Benchmarking Multi-Modal Understanding and Reasoning in Vehicle Accidents and Beyond</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo-full.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<br>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div style="text-align: center; margin-bottom: 8px;">
+            <img src="./static/images/logo-full.png" alt="Your Image Description" style="max-width: 260px; height: auto;">
+          </div>
+          <h1 class="title is-1 publication-title">AccidentBench: Benchmarking Multi-Modal Understanding and Reasoning in Vehicle Accidents and Beyond</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Anonymous Authors</a>
+            </span>           
+            
+          </div>
+
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- <span class="link-block">
+                <a href="./static/papers/M4R_paper.pdf" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://accident-bench.github.io/#leaderboard-land"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+             <!--  <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">                        
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://anonymous.4open.science/r/m4r-436E"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/Accident-Bench/Dataset"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+            </div>
+            <!-- <span class="link-block">
+              <a href="https://open-space-reasoning.github.io/#leaderboard-land"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <p style="font-size:18px">🏆</p>
+                </span>
+                <span>Leaderboard in Land Space</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://open-space-reasoning.github.io/#leaderboard-air"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <p style="font-size:18px">🏆</p>
+                </span>
+                <span>Leaderboard in Air Space</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://open-space-reasoning.github.io/#leaderboard-water"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <p style="font-size:18px">🏆</p>
+                </span>
+                <span>Leaderboard in Water Space</span>
+              </a>
+            </span> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Rapid advances in multimodal models demand benchmarks that rigorously evaluate understanding and reasoning in safety-critical, dynamic real-world settings. We present AccidentBench, a large-scale benchmark that combines vehicle accident scenarios with Beyond domains, safety-critical settings in air and water that emphasize spatial and temporal reasoning (e.g., navigation, orientation, multi-vehicle motion). The benchmark contains approximately 2000 videos and over 19000 human-annotated question--answer pairs spanning multiple video lengths (short/medium/long) and difficulty levels (easy/medium/hard). Tasks systematically probe core capabilities: temporal, spatial, and intent understanding and reasoning. By unifying accident-centric traffic scenes with broader safety-critical scenarios in air and water, AccidentBench offers a comprehensive, physically grounded testbed for evaluating models under real-world variability. Evaluations of state-of-the-art models (e.g., Gemini-2.5 Pro and GPT-5) show that even the strongest models achieve only about 18% accuracy on the hardest tasks and longest videos, revealing substantial gaps in real-world temporal, spatial, and intent reasoning. AccidentBench is designed to expose these critical gaps and drive the development of multimodal models that are safer, more robust, and better aligned with real-world safety-critical challenges.  
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->    
+      
+      
+      
+      
+
+      
+
+      <section class="section">
+        <h3 class="title is-3"><b>Accident Vehicle Space</b> Scenarios</h3>
+      <div class="video-carousel-scroll" playsinline autoplay loop muted>
+        <div class="video-track">
+          <!-- 这里放视频，每个video都加 class="video-slide-scroll" -->
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000001_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000002_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000003_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000004_output.mp4" type="video/mp4">  
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000005_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000006_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000007_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000008_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000009_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000010_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000011_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000012_output.mp4" type="video/mp4">  
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000013_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000014_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000015_output.mp4" type="video/mp4">
+          </video>
+          <!-- ...更多video... -->
+          <!-- 重要：为了循环滚动，建议把同样的视频片段再复制一遍 -->
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000001_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000002_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000003_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000004_output.mp4" type="video/mp4">  
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000005_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000006_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000007_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000008_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000009_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000010_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000011_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000012_output.mp4" type="video/mp4">  
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000013_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000014_output.mp4" type="video/mp4">
+          </video>
+          <video class="video-slide-scroll" playsinline autoplay loop muted>
+            <source src="./static/videos/land_space/short/000015_output.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>  
+      
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3" id="leaderboard-land">Leaderboard of Benchmark Evaluation in the <b>Accident Vehicles</b></h3>
+    <!-- <p>Scores of multimodal models on the M4R benchmark test subset (3,798 tasks out of a total of 19,000).</p> -->
+    <!-- <div style="width: calc(100vw - 32px); margin-left: -16px; padding: 0 16px;">
+      <h3 class="title is-3">Leaderboard of Benchmark Evaluation in the <b>Land Space</b> Domain</h3>
+    </div> -->
+    
+    
+    <div class="table-container compact-table" style="overflow-x:auto;">
+      <table class="table is-bordered is-striped is-hoverable compact-table" style="width:100%;">     
+        <caption style="text-align: justify;">
+          Evaluation of the <b>Accident Vehicles</b> using using <b>Short</b>, <b>Medium</b>, and <b>Long</b>  videos, categorized by reasoning types: temporal, spatial, and intent reasoning. The background color transitions from <span style="color: lightblue; font-weight: bold;">light blue</span> to <span style="color: plum; font-weight: bold;">light purple</span>, reflecting an increase in video length and indicating a gradual rise in task difficulty.
+           <!-- (Results are reported on the <b>M4R</b> benchmark test subset comprising 3,798 tasks out of a total of 19,000). -->
+          <!-- Evaluation of <b>Land Space</b> using <b>Short</b>, <b>Medium</b>, and <b>Long</b> Videos, categorized by reasoning types (temporal reasoning, spatial reasoning, intent reasoning). -->
+        </caption>
+        <colgroup>
+          <col class="col-diff" style="width: 63px;">
+          <col class="col-model" style="width: 65px;">
+          <col class="col-size" style="width: 30px;">
+          <col class="col-avg" style="width: 60px;">
+          <col class="col-short-avg" style="width: 60px;">
+          <col class="col-short-temp" style="width: 60px;">
+          <col class="col-short-spatial" style="width: 60px;">
+          <col class="col-short-intent" style="width: 60px;">
+          <col class="col-medium-avg" style="width: 60px;">
+          <col class="col-medium-temp" style="width: 60px;">
+          <col class="col-medium-spatial" style="width: 60px;">
+          <col class="col-medium-intent" style="width: 60px;">
+          <col class="col-long-avg" style="width: 60px;">
+          <col class="col-long-temp" style="width: 60px;">
+          <col class="col-long-spatial" style="width: 60px;">
+          <col class="col-long-intent" style="width: 60px;">
+        </colgroup>
+        <thead class="cell-lightgray">
+          <tr>
+            <th rowspan="2">Difficulty</th>
+            <th rowspan="2">Models</th>
+            <th rowspan="2">Size</th>
+            <th rowspan="2">Over. Avg.</th>
+            <th colspan="4">Short Video Scenarios</th>
+            <th colspan="4">Medium Video Scenarios</th>
+            <th colspan="4">Long Video Scenarios</th>
+          </tr>
+          <tr>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+          </tr>
+        </thead>
+        
+        <tbody> 
+          <tr>
+            <td rowspan="15" style="vertical-align: middle;">Hard</td>
+            <td class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5  🥇</a></td>
+            <td>-</td>
+            <td><b>37.33</b></td>
+            <td>45.87</td>
+            <td>48.52</td>
+            <td>55.10</td>
+            <td>34.00</td>
+            <td>48.12</td>
+            <td>49.02</td>
+            <td>39.29</td>
+            <td>56.06</td>
+            <td>18.00</td>
+            <td>10.00</td>
+            <td>34.00</td>
+            <td>10.00</td>
+          </tr>          
+          <tr><td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>24.41</td><td>26.78</td><td>34.65</td><td>34.69</td><td>11</td><td>35.70</td><td>43.14</td><td>32.14</td><td>31.82</td><td>11.00</td><td>6</td><td>26</td><td>1</td></tr>
+          <tr>
+            <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+            <td>-</td>
+            <td>29.76</td>
+            <td>34.84</td>
+            <td>36.63</td>
+            <td>44.90</td>
+            <td>23.0</td>
+            <td>35.76</td>
+            <td>45.10</td>
+            <td>30.36</td>
+            <td>31.82</td>
+            <td>18.67</td>
+            <td>10.0</td>
+            <td>28.0</td>
+            <td>18.0</td>
+          </tr>               
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+            <td>-</td>
+            <td>28.67</td>
+            <td>32.13</td>
+            <td>35.64</td>
+            <td>37.75</td>
+            <td>23.00</td>
+            <td>35.20</td>
+            <td>37.25</td>
+            <td>41.07</td>
+            <td>27.27</td>
+            <td>18.67</td>
+            <td>6.00</td>
+            <td>36.00</td>
+            <td>14.00</td>
+          </tr>
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+            <td>-</td>
+            <td>24.34</td>
+            <td>24.74</td>
+            <td>30.69</td>
+            <td>26.53</td>
+            <td>17.00</td>
+            <td>30.94</td>
+            <td>52.94</td>
+            <td>23.21</td>
+            <td>16.67</td>
+            <td>17.33</td>
+            <td>14.00</td>
+            <td>24.00</td>
+            <td>14.00</td>
+          </tr>
+          
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>18.76</td><td>19.72</td><td>23.76</td><td>20.41</td><td>15</td><td>24.55</td><td>33.33</td><td>16.07</td><td>24.24</td><td>12.00</td><td>2</td><td>26</td><td>8</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>28.71</td>
+            <td>33.76</td>
+            <td>35.64</td>
+            <td>31.63</td>
+            <td>34.0</td>
+            <td>28.87</td>
+            <td>37.26</td>
+            <td>35.71</td>
+            <td>13.63</td>
+            <td>16.0</td>
+            <td>12.0</td>
+            <td>26.0</td>
+            <td>10.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>23.78</td><td>21.33</td><td>26.0</td><td>31.0</td><td>7.0</td><td>32.00</td><td>46.0</td><td>32.0</td><td>18.0</td><td>18.00</td><td>16.0</td><td>24.0</td><td>14.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>22.67</td><td>20.00</td><td>18.0</td><td>33.0</td><td>9.0</td><td>30.00</td><td>46.0</td><td>30.0</td><td>14.0</td><td>18.00</td><td>16.0</td><td>28.0</td><td>10.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>19.56</td><td>18.67</td><td>18.0</td><td>28.0</td><td>8.0</td><td>28.00</td><td>34.0</td><td>24.0</td><td>26.0</td><td>12.00</td><td>8.0</td><td>22.0</td><td>6.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>16.22</td><td>20.67</td><td>16.0</td><td>32.0</td><td>14.0</td><td>11.33</td><td>12.0</td><td>12.0</td><td>10.0</td><td>16.67</td><td>10.0</td><td>30.0</td><td>10.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>19.78</td><td>19.33</td><td>12.0</td><td>35.0</td><td>11.0</td><td>24.67</td><td>26.0</td><td>30.0</td><td>18.0</td><td>15.33</td><td>10.0</td><td>28.0</td><td>8.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>13.67</td><td>14.33</td><td>5.0</td><td>27.0</td><td>11.0</td><td>14.67</td><td>18.0</td><td>8.0</td><td>18.0</td><td>12.0</td><td>6.0</td><td>22.0</td><td>8.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>22.66</td><td>19.33</td><td>11.0</td><td>34.0</td><td>13.0</td><td>35.33</td><td>46.0</td><td>24.0</td><td>36.0</td><td>13.33</td><td>4.0</td><td>26.0</td><td>10.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>22.89</td><td>26.00</td><td>17.0</td><td>30.0</td><td>31.0</td><td>30.00</td><td>40.0</td><td>32.0</td><td>18.0</td><td>12.67</td><td>2.0</td><td>30.0</td><td>6.0</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>22.78</td><td>23.00</td><td>17.0</td><td>33.0</td><td>19.0</td><td>26.67</td><td>38.0</td><td>26.0</td><td>16.0</td><td>18.67</td><td>10.0</td><td>34.0</td><td>12.0</td></tr> -->
+          <tr><td colspan="16"></td></tr>
+          <tr><td rowspan="15" style="vertical-align: middle;">Medium</td>
+            <td class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5  🥇</a></td>
+            <td>-</td>
+            <td><b>48.34</b></td>
+            <td>62.55</td>
+            <td>64.65</td>
+            <td>67.00</td>
+            <td>56.00</td>
+            <td>46.48</td>
+            <td>50.00</td>
+            <td>42.22</td>
+            <td>47.22</td>
+            <td>36.00</td>
+            <td>24.00</td>
+            <td>56.00</td>
+            <td>28.00</td>
+          </tr>          
+          <tr><td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>36.99</td><td>45.49</td><td>48.48</td><td>55</td><td>33</td><td>33.89</td><td>41.67</td><td>26.67</td><td>33.33</td><td>31.33</td><td>24</td><td>44</td><td>26</td></tr>
+          <tr>
+            <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro </a></td>
+            <td>-</td>
+            <td>36.46</td>
+            <td>42.79</td>
+            <td>38.38</td>
+            <td>59.0</td>
+            <td>31.0</td>
+            <td>33.93</td>
+            <td>39.58</td>
+            <td>28.89</td>
+            <td>33.33</td>
+            <td>32.67</td>
+            <td>28.0</td>
+            <td>44.0</td>
+            <td>26.0</td>
+          </tr>          
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+            <td>-</td>
+            <td>37.52</td>
+            <td>47.82</td>
+            <td>46.47</td>
+            <td>56.00</td>
+            <td>41.00</td>
+            <td>36.99</td>
+            <td>43.75</td>
+            <td>42.22</td>
+            <td>25.00</td>
+            <td>28.00</td>
+            <td>12.00</td>
+            <td>44.00</td>
+            <td>28.00</td>
+          </tr>
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+            <td>-</td>
+            <td>36.70</td>
+            <td>47.50</td>
+            <td>48.49</td>
+            <td>58.00</td>
+            <td>36.00</td>
+            <td>33.93</td>
+            <td>39.58</td>
+            <td>28.89</td>
+            <td>33.33</td>
+            <td>28.67</td>
+            <td>24.00</td>
+            <td>42.00</td>
+            <td>20.00</td>
+          </tr>
+          
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>33.89</td><td>39.47</td><td>42.42</td><td>42</td><td>34</td><td>33.52</td><td>33.33</td><td>42.22</td><td>25</td><td>28.67</td><td>12</td><td>52</td><td>22</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>35.35</td>
+            <td>41.78</td>
+            <td>35.35</td>
+            <td>50.0</td>
+            <td>40.0</td>
+            <td>35.60</td>
+            <td>39.58</td>
+            <td>42.22</td>
+            <td>25.0</td>
+            <td>28.67</td>
+            <td>16.0</td>
+            <td>44.0</td>
+            <td>26.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>35.11</td><td>36.00</td><td>39.0</td><td>50.0</td><td>19.0</td><td>36.67</td><td>50.0</td><td>36.0</td><td>24.0</td><td>32.67</td><td>30.0</td><td>40.0</td><td>28.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>34.66</td><td>37.33</td><td>43.0</td><td>57.0</td><td>12.0</td><td>35.33</td><td>42.0</td><td>46.0</td><td>18.0</td><td>31.33</td><td>26.0</td><td>44.0</td><td>24.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>33.89</td><td>39.67</td><td>38.0</td><td>53.0</td><td>28.0</td><td>32.67</td><td>44.0</td><td>28.0</td><td>26.0</td><td>29.33</td><td>16.0</td><td>46.0</td><td>26.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>20.0</td><td>27.33</td><td>16.0</td><td>49.0</td><td>17.0</td><td>10.67</td><td>14.0</td><td>10.0</td><td>8.0</td><td>22.0</td><td>16.0</td><td>36.0</td><td>14.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>25.67</td><td>25.00</td><td>20.0</td><td>34.0</td><td>26.0</td><td>28.67</td><td>36.0</td><td>28.0</td><td>22.0</td><td>23.33</td><td>14.0</td><td>40.0</td><td>16.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>16.67</td><td>16.00</td><td>26.0</td><td>30.0</td><td>16.0</td><td>14.67</td><td>18.0</td><td>8.0</td><td>18.0</td><td>19.33</td><td>12.0</td><td>30.0</td><td>16.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>28.55</td><td>28.33</td><td>21.0</td><td>44.0</td><td>20.0</td><td>33.33</td><td>40.0</td><td>30.0</td><td>30.0</td><td>24.00</td><td>8.0</td><td>40.0</td><td>24.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>29.89</td><td>39.00</td><td>37.0</td><td>42.0</td><td>38.0</td><td>30.67</td><td>32.0</td><td>40.0</td><td>20.0</td><td>20.00</td><td>16.0</td><td>26.0</td><td>18.0</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>30.78</td><td>41.67</td><td>33.0</td><td>52.0</td><td>40.0</td><td>24.67</td><td>30.0</td><td>30.0</td><td>14.0</td><td>26.00</td><td>22.0</td><td>36.0</td><td>20.0</td></tr> -->
+           <tr><td colspan="16"></td></tr>
+           <tr><td rowspan="15" style="vertical-align: middle;">Easy</td>
+            <td  class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5 🥇</a></td>
+            <td>-</td>
+            <td><b>54.86</b></td>
+            <td>71.20</td>
+            <td>76.00</td>
+            <td>69.61</td>
+            <td>68.00</td>
+            <td>48.71</td>
+            <td>47.06</td>
+            <td>44.90</td>
+            <td>54.17</td>
+            <td>44.67</td>
+            <td>34.00</td>
+            <td>52.00</td>
+            <td>48.00</td>
+          </tr>          
+          <tr><td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>42.17</td><td>52.35</td><td>59</td><td>47.06</td><td>51</td><td>47.16</td><td>54.9</td><td>44.9</td><td>41.67</td><td>27.00</td><td>44</td><td>5</td><td>32</td></tr>
+          <tr>
+            <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+            <td>-</td>
+            <td>54.56</td>
+            <td>62.96</td>
+            <td>70.0</td>
+            <td>55.88</td>
+            <td>63.0</td>
+            <td>54.73</td>
+            <td>52.94</td>
+            <td>59.18</td>
+            <td>52.08</td>
+            <td>46.00</td>
+            <td>40.0</td>
+            <td>54.0</td>
+            <td>44.0</td>
+          </tr>          
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+            <td>-</td>
+            <td>50.00</td>
+            <td>67.56</td>
+            <td>69.00</td>
+            <td>65.69</td>
+            <td>68.00</td>
+            <td>44.45</td>
+            <td>52.94</td>
+            <td>40.82</td>
+            <td>39.58</td>
+            <td>38.00</td>
+            <td>32.00</td>
+            <td>38.00</td>
+            <td>44.00</td>
+          </tr>
+          <tr>
+            <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+            <td>-</td>
+            <td>51.40</td>
+            <td>58.97</td>
+            <td>70.00</td>
+            <td>54.90</td>
+            <td>52.00</td>
+            <td>46.56</td>
+            <td>52.94</td>
+            <td>36.74</td>
+            <td>50.00</td>
+            <td>48.67</td>
+            <td>38.00</td>
+            <td>56.00</td>
+            <td>52.00</td>
+          </tr>
+          
+          
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>46.00</td><td>51.33</td><td>60</td><td>50</td><td>44</td><td>36.92</td><td>49.02</td><td>36.73</td><td>25</td><td>50.00</td><td>58</td><td>44</td><td>48</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>48.59</td>
+            <td>60.33</td>
+            <td>61.0</td>
+            <td>50.0</td>
+            <td>70.0</td>
+            <td>36.35</td>
+            <td>35.29</td>
+            <td>51.02</td>
+            <td>22.73</td>
+            <td>49.33</td>
+            <td>64.0</td>
+            <td>44.0</td>
+            <td>40.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>52.55</td><td>61.00</td><td>62.0</td><td>59.0</td><td>62.0</td><td>45.33</td><td>58.0</td><td>44.0</td><td>34.0</td><td>51.33</td><td>62.0</td><td>62.0</td><td>30.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>50.11</td><td>55.67</td><td>55.0</td><td>60.0</td><td>52.0</td><td>44.67</td><td>58.0</td><td>42.0</td><td>34.0</td><td>50.00</td><td>54.0</td><td>64.0</td><td>32.0</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>44.89</td><td>53.33</td><td>46.0</td><td>60.0</td><td>54.0</td><td>37.33</td><td>48.0</td><td>38.0</td><td>26.0</td><td>44.00</td><td>44.0</td><td>48.0</td><td>40.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>31.25</td><td>38.00</td><td>35.0</td><td>45.0</td><td>34.0</td><td>21.33</td><td>12.0</td><td>14.0</td><td>38.0</td><td>34.67</td><td>20.0</td><td>50.0</td><td>34.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>31.44</td><td>33.00</td><td>30.0</td><td>31.0</td><td>38.0</td><td>33.33</td><td>38.0</td><td>36.0</td><td>26.0</td><td>28.00</td><td>16.0</td><td>32.0</td><td>36.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>29.78</td><td>32.00</td><td>31.0</td><td>33.0</td><td>32.0</td><td>24.00</td><td>26.0</td><td>30.0</td><td>16.0</td><td>33.33</td><td>28.0</td><td>36.0</td><td>36.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>43.22</td><td>51.00</td><td>58.0</td><td>50.0</td><td>45.0</td><td>41.33</td><td>46.0</td><td>38.0</td><td>40.0</td><td>37.33</td><td>32.0</td><td>44.0</td><td>36.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>40.67</td><td>51.33</td><td>55.0</td><td>42.0</td><td>57.0</td><td>36.00</td><td>32.0</td><td>42.0</td><td>34.0</td><td>34.67</td><td>34.0</td><td>28.0</td><td>42.0</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>42.00</td><td>49.33</td><td>38.0</td><td>55.0</td><td>55.0</td><td>34.67</td><td>42.0</td><td>34.0</td><td>28.0</td><td>42.00</td><td>36.0</td><td>54.0</td><td>36.0</td></tr> -->
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <h3 class="title is-3"><b>Airplane Navigation</b> Scenarios</h3>
+<div class="video-carousel-scroll" playsinline autoplay loop muted>
+  <div class="video-track">
+    <!-- 这里放视频，每个video都加 class="video-slide-scroll" -->
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_1_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_2_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_3_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_4_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_5_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_6_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_7_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_8_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_9_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_10_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_11_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_12_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_13_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_14_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_15_output.mp4" type="video/mp4">
+    </video>
+    <!-- ...更多video... -->
+    <!-- 重要：为了循环滚动，建议把同样的视频片段再复制一遍 -->
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_1_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_2_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_3_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_4_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_5_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_6_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_7_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_8_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_9_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_10_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_11_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_12_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_13_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_14_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/air_space/air_space_short_15_output.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+</section>  
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" id="leaderboard-air">Leaderboard of Benchmark Evaluation in the <b>Airplane</b></h2>
+    <div class="table-container compact-table" style="overflow-x:auto;">
+      <table class="table is-bordered is-striped is-hoverable compact-table" style="width:auto;">
+        <caption style="text-align: justify;">
+          Evaluation of the <b>Airplane Navigation</b> using using <b>Short</b>, <b>Medium</b>, and <b>Long</b>  videos, categorized by reasoning types: temporal, spatial, and intent reasoning. The background color transitions from <span style="color: lightblue; font-weight: bold;">light blue</span> to <span style="color: plum; font-weight: bold;">light purple</span>, reflecting an increase in video length and indicating a gradual rise in task difficulty.
+          <!-- Evaluation of <b>Water Space</b> using <b>Short</b>, <b>Medium</b>, and <b>Long</b> Videos, categorized by reasoning types (temporal reasoning, spatial reasoning, intent reasoning). -->
+        </caption>
+        <colgroup>
+          <col class="col-diff" style="width: 63px;">
+          <col class="col-model" style="width: 65px;">
+          <col class="col-size" style="width: 30px;">
+          <col class="col-avg" style="width: 60px;">
+          <col class="col-short-avg" style="width: 60px;">
+          <col class="col-short-temp" style="width: 60px;">
+          <col class="col-short-spatial" style="width: 60px;">
+          <col class="col-short-intent" style="width: 60px;">
+          <col class="col-medium-avg" style="width: 60px;">
+          <col class="col-medium-temp" style="width: 60px;">
+          <col class="col-medium-spatial" style="width: 60px;">
+          <col class="col-medium-intent" style="width: 60px;">
+          <col class="col-long-avg" style="width: 60px;">
+          <col class="col-long-temp" style="width: 60px;">
+          <col class="col-long-spatial" style="width: 60px;">
+          <col class="col-long-intent" style="width: 60px;">
+        </colgroup>
+        <thead class="cell-lightgray">
+          <tr>
+            <th rowspan="2">Difficulty</th>
+            <th rowspan="2">Models</th>
+            <th rowspan="2">Size</th>
+            <th rowspan="2">Over. Avg.</th>
+            <th colspan="4">Short Video Scenarios</th>
+            <th colspan="4">Medium Video Scenarios</th>
+            <th colspan="4">Long Video Scenarios</th>
+          </tr>
+          <tr>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Hard -->
+          <tr><td rowspan="15" style="vertical-align: middle;">Hard</td>
+            <td><a href="https://openai.com/index/introducing-gpt-5/">GPT 5</a></td>
+            <td>-</td>
+            <td>28.11</td>
+            <td>26.67</td>
+            <td>18.00</td>
+            <td>30.00</td>
+            <td>32.00</td>
+            <td>26.00</td>
+            <td>32.00</td>
+            <td>34.00</td>
+            <td>12.00</td>
+            <td>31.67</td>
+            <td>30.00</td>
+            <td>20.00</td>
+            <td>45.00</td>
+          </tr>       
+          <tr>
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>18.11</td><td>21.33</td><td>16.00</td><td>26.00</td><td>22.00</td><td>14.67</td><td>12.00</td><td>30.00</td><td>2.00</td><td>18.33</td><td>5.00</td><td>35.00</td><td>15.00</td></tr>
+            <tr>
+              <td class="model-gold"><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro 🥇</a></td>
+              <td>-</td>
+              <td><b>31.39</b></td>
+              <td>32.83</td>
+              <td>36.0</td>
+              <td>24.49</td>
+              <td>38.0</td>
+              <td>24.67</td>
+              <td>32.0</td>
+              <td>22.0</td>
+              <td>20.0</td>
+              <td>36.67</td>
+              <td>30.0</td>
+              <td>15.0</td>
+              <td>65.0</td>
+            </tr>            
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>25.78</td>
+              <td>26.00</td>
+              <td>26.00</td>
+              <td>18.00</td>
+              <td>34.00</td>
+              <td>21.33</td>
+              <td>28.00</td>
+              <td>18.00</td>
+              <td>18.00</td>
+              <td>30.00</td>
+              <td>30.00</td>
+              <td>10.00</td>
+              <td>50.00</td>
+            </tr>
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+              <td>-</td>
+              <td>25.44</td>
+              <td>25.33</td>
+              <td>22.00</td>
+              <td>28.00</td>
+              <td>26.00</td>
+              <td>26.00</td>
+              <td>26.00</td>
+              <td>28.00</td>
+              <td>24.00</td>
+              <td>25.00</td>
+              <td>0.00</td>
+              <td>40.00</td>
+              <td>35.00</td>
+            </tr>
+            
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>22.34</td><td>26.67</td><td>24.00</td><td>26.00</td><td>30.00</td><td>18.67</td><td>20.00</td><td>22.00</td><td>14.00</td><td>21.67</td><td>10.00</td><td>25.00</td><td>30.00</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>24.22</td>
+            <td>26.00</td>
+            <td>18.0</td>
+            <td>32.0</td>
+            <td>28.0</td>
+            <td>23.33</td>
+            <td>20.0</td>
+            <td>28.0</td>
+            <td>22.0</td>
+            <td>23.33</td>
+            <td>10.0</td>
+            <td>40.0</td>
+            <td>20.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>17.33</td><td>19.33</td><td>24.00</td><td>26.00</td><td>10.00</td><td>19.33</td><td>16.00</td><td>32.00</td><td>10.00</td><td>13.33</td><td>10.00</td><td>10.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>18.22</td><td>18.67</td><td>20.00</td><td>28.00</td><td>8.00</td><td>19.33</td><td>16.00</td><td>30.00</td><td>12.00</td><td>16.67</td><td>5.00</td><td>35.00</td><td>10.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>15.33</td><td>15.33</td><td>14.00</td><td>10.00</td><td>22.00</td><td>14.00</td><td>16.00</td><td>18.00</td><td>8.00</td><td>16.67</td><td>15.00</td><td>30.00</td><td>5.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>17.89</td><td>18.67</td><td>14.0</td><td>34.0</td><td>8.0</td><td>16.67</td><td>6.0</td><td>32.0</td><td>12.0</td><td>18.33</td><td>5.0</td><td>40.0</td><td>10.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>14.78</td><td>16.67</td><td>14.00</td><td>28.00</td><td>8.00</td><td>12.67</td><td>6.00</td><td>22.00</td><td>10.00</td><td>15.00</td><td>5.00</td><td>30.00</td><td>10.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>15.67</td><td>16.00</td><td>12.00</td><td>28.00</td><td>8.00</td><td>16.00</td><td>12.00</td><td>26.00</td><td>10.00</td><td>15.00</td><td>10.00</td><td>25.00</td><td>10.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>16.22</td><td>20.00</td><td>6.00</td><td>36.00</td><td>18.00</td><td>15.33</td><td>4.00</td><td>24.00</td><td>18.00</td><td>13.33</td><td>0.00</td><td>30.00</td><td>10.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>16.55</td><td>19.33</td><td>0.00</td><td>30.00</td><td>28.00</td><td>15.33</td><td>2.00</td><td>30.00</td><td>14.00</td><td>15.00</td><td>5.00</td><td>30.00</td><td>10.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>15.33</td><td>16.00</td><td>8.00</td><td>32.00</td><td>8.00</td><td>13.33</td><td>6.00</td><td>26.00</td><td>8.00</td><td>16.67</td><td>10.00</td><td>25.00</td><td>15.00</td></tr> -->
+          <tr><td colspan="16"></td></tr>
+          <!-- Medium -->
+          <tr><td rowspan="15" style="vertical-align: middle;">Medium</td>
+            <td><a href="https://openai.com/index/introducing-gpt-5/">GPT 5</a></td>
+            <td>-</td>
+            <td>44.00</td>
+            <td>39.33</td>
+            <td>28.00</td>
+            <td>44.00</td>
+            <td>46.00</td>
+            <td>39.33</td>
+            <td>36.00</td>
+            <td>54.00</td>
+            <td>28.00</td>
+            <td>53.33</td>
+            <td>65.00</td>
+            <td>35.00</td>
+            <td>60.00</td>
+          </tr>          
+          <tr>
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>38.45</td><td>38.67</td><td>38.00</td><td>56.00</td><td>22.00</td><td>30.00</td><td>38.00</td><td>34.00</td><td>18.00</td><td>46.67</td><td>65.00</td><td>30.00</td><td>45.00</td></tr>
+            <tr>
+              <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+              <td>-</td>
+              <td>43.11</td>
+              <td>44.67</td>
+              <td>42.0</td>
+              <td>40.0</td>
+              <td>52.0</td>
+              <td>31.33</td>
+              <td>34.0</td>
+              <td>34.0</td>
+              <td>26.0</td>
+              <td>53.33</td>
+              <td>60.0</td>
+              <td>35.0</td>
+              <td>65.0</td>
+            </tr>            
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>39.78</td>
+              <td>39.33</td>
+              <td>32.00</td>
+              <td>38.00</td>
+              <td>48.00</td>
+              <td>30.00</td>
+              <td>34.00</td>
+              <td>28.00</td>
+              <td>28.00</td>
+              <td>50.00</td>
+              <td>65.00</td>
+              <td>15.00</td>
+              <td>70.00</td>
+            </tr>
+            <tr>
+              <td class="model-gold"><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think  🥇</a></td>
+              <td>-</td>
+              <td><b>49.67</b></td>
+              <td>43.33</td>
+              <td>30.00</td>
+              <td>48.00</td>
+              <td>52.00</td>
+              <td>40.67</td>
+              <td>38.00</td>
+              <td>50.00</td>
+              <td>34.00</td>
+              <td>65.00</td>
+              <td>60.00</td>
+              <td>65.00</td>
+              <td>70.00</td>
+            </tr>
+            
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>38.78</td><td>38.00</td><td>32.00</td><td>48.00</td><td>34.00</td><td>36.67</td><td>34.00</td><td>52.00</td><td>24.00</td><td>41.67</td><td>30.00</td><td>55.00</td><td>40.00</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>39.67</td>
+            <td>38.00</td>
+            <td>26.0</td>
+            <td>40.0</td>
+            <td>48.0</td>
+            <td>36.00</td>
+            <td>32.0</td>
+            <td>54.0</td>
+            <td>22.0</td>
+            <td>45.00</td>
+            <td>50.0</td>
+            <td>35.0</td>
+            <td>50.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>28.67</td><td>31.33</td><td>28.00</td><td>58.00</td><td>8.00</td><td>24.67</td><td>12.00</td><td>50.00</td><td>12.00</td><td>30.00</td><td>25.00</td><td>45.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>34.33</td><td>30.00</td><td>20.00</td><td>58.00</td><td>12.00</td><td>34.67</td><td>32.00</td><td>50.00</td><td>22.00</td><td>38.33</td><td>40.00</td><td>45.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>32.22</td><td>29.33</td><td>28.00</td><td>44.00</td><td>16.00</td><td>34.00</td><td>30.00</td><td>54.00</td><td>18.00</td><td>33.33</td><td>35.00</td><td>40.00</td><td>25.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>26.11</td><td>24.67</td><td>18.0</td><td>40.0</td><td>16.0</td><td>25.33</td><td>18.0</td><td>40.0</td><td>18.0</td><td>28.33</td><td>25.0</td><td>40.0</td><td>20.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>24.00</td><td>25.33</td><td>24.00</td><td>36.00</td><td>16.00</td><td>20.00</td><td>16.00</td><td>26.00</td><td>18.00</td><td>26.67</td><td>15.00</td><td>45.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>23.67</td><td>23.33</td><td>20.00</td><td>34.00</td><td>16.00</td><td>22.67</td><td>20.00</td><td>32.00</td><td>16.00</td><td>25.00</td><td>20.00</td><td>35.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>33.34</td><td>32.67</td><td>12.00</td><td>48.00</td><td>38.00</td><td>30.67</td><td>22.00</td><td>50.00</td><td>20.00</td><td>36.67</td><td>20.00</td><td>60.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>28.00</td><td>24.67</td><td>16.00</td><td>24.00</td><td>34.00</td><td>26.00</td><td>24.00</td><td>26.00</td><td>28.00</td><td>33.33</td><td>35.00</td><td>20.00</td><td>45.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>28.67</td><td>22.67</td><td>18.00</td><td>36.00</td><td>14.00</td><td>26.67</td><td>18.00</td><td>44.00</td><td>18.00</td><td>36.67</td><td>40.00</td><td>35.00</td><td>35.00</td></tr> -->
+          <tr><td colspan="16"></td></tr>
+          <!-- Easy -->          
+            <tr><td rowspan="15" style="vertical-align: middle;">Easy</td>  
+              <td><a href="https://openai.com/index/introducing-gpt-5/">GPT 5</a></td>
+              <td>-</td>
+              <td>52.00</td>
+              <td>47.33</td>
+              <td>42.00</td>
+              <td>42.00</td>
+              <td>58.00</td>
+              <td>48.67</td>
+              <td>46.00</td>
+              <td>46.00</td>
+              <td>54.00</td>
+              <td>60.00</td>
+              <td>65.00</td>
+              <td>35.00</td>
+              <td>80.00</td>
+            </tr>        
+            <tr>
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>40.67</td><td>35.33</td><td>30.00</td><td>28.00</td><td>48.00</td><td>36.67</td><td>24.00</td><td>38.00</td><td>48.00</td><td>50.00</td><td>45.00</td><td>50.00</td><td>55.00</td></tr>
+            <tr>
+              <td class="model-gold"><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro 🥇</a></td>
+              <td>-</td>
+              <td><b>52.56</b></td>
+              <td>56.00</td>
+              <td>60.0</td>
+              <td>48.0</td>
+              <td>60.0</td>
+              <td>40.00</td>
+              <td>40.0</td>
+              <td>36.0</td>
+              <td>44.0</td>
+              <td>61.67</td>
+              <td>75.0</td>
+              <td>35.0</td>
+              <td>75.0</td>
+            </tr>   
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>50.67</td>
+              <td>49.33</td>
+              <td>40.00</td>
+              <td>46.00</td>
+              <td>62.00</td>
+              <td>46.00</td>
+              <td>46.00</td>
+              <td>44.00</td>
+              <td>48.00</td>
+              <td>56.67</td>
+              <td>55.00</td>
+              <td>40.00</td>
+              <td>75.00</td>
+            </tr>
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+              <td>-</td>
+              <td>50.78</td>
+              <td>49.33</td>
+              <td>36.00</td>
+              <td>52.00</td>
+              <td>60.00</td>
+              <td>48.00</td>
+              <td>40.00</td>
+              <td>50.00</td>
+              <td>54.00</td>
+              <td>55.00</td>
+              <td>60.00</td>
+              <td>50.00</td>
+              <td>55.00</td>
+            </tr>
+                     
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>43.00</td><td>45.33</td><td>36.00</td><td>44.00</td><td>56.00</td><td>42.00</td><td>48.00</td><td>32.00</td><td>46.00</td><td>41.67</td><td>35.00</td><td>50.00</td><td>40.00</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>42.45</td>
+            <td>38.00</td>
+            <td>34.0</td>
+            <td>38.0</td>
+            <td>42.0</td>
+            <td>42.67</td>
+            <td>30.0</td>
+            <td>56.0</td>
+            <td>42.0</td>
+            <td>46.67</td>
+            <td>40.0</td>
+            <td>45.0</td>
+            <td>55.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>36.11</td><td>35.33</td><td>36.00</td><td>44.00</td><td>26.00</td><td>34.67</td><td>28.00</td><td>46.00</td><td>30.00</td><td>38.33</td><td>30.00</td><td>40.00</td><td>45.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>38.44</td><td>36.67</td><td>28.00</td><td>46.00</td><td>36.00</td><td>35.33</td><td>32.00</td><td>42.00</td><td>32.00</td><td>43.33</td><td>60.00</td><td>40.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>40.33</td><td>43.33</td><td>42.00</td><td>50.00</td><td>38.00</td><td>39.33</td><td>30.00</td><td>44.00</td><td>44.00</td><td>38.33</td><td>35.00</td><td>60.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>33.22</td><td>36.67</td><td>36.00</td><td>42.0</td><td>32.0</td><td>31.33</td><td>36.0</td><td>32.0</td><td>26.0</td><td>31.67</td><td>35.0</td><td>30.0</td><td>30.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>33.22</td><td>33.33</td><td>34.00</td><td>38.00</td><td>28.00</td><td>34.67</td><td>34.00</td><td>38.00</td><td>32.00</td><td>31.67</td><td>35.00</td><td>30.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>33.22</td><td>33.33</td><td>34.00</td><td>38.00</td><td>28.00</td><td>34.67</td><td>34.00</td><td>38.00</td><td>32.00</td><td>31.67</td><td>35.00</td><td>30.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>52.45</td><td>50.00</td><td>34.00</td><td>56.00</td><td>60.00</td><td>50.67</td><td>40.00</td><td>54.00</td><td>58.00</td><td>56.67</td><td>55.00</td><td>60.00</td><td>55.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>39.89</td><td>33.33</td><td>28.00</td><td>18.00</td><td>54.00</td><td>38.00</td><td>48.00</td><td>16.00</td><td>50.00</td><td>48.33</td><td>55.00</td><td>30.00</td><td>60.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>43.67</td><td>43.33</td><td>36.00</td><td>52.00</td><td>42.00</td><td>42.67</td><td>38.00</td><td>54.00</td><td>36.00</td><td>45.00</td><td>40.00</td><td>50.00</td><td>45.00</td></tr> -->
+        </tbody>
+
+        
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <h3 class="title is-3"><b>Ship Motion</b> Scenarios</h3>
+<div class="video-carousel-scroll" playsinline autoplay loop muted>
+  <div class="video-track">
+    <!-- 这里放视频，每个video都加 class="video-slide-scroll" --> 
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_1_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_2_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_3_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_4_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_5_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_6_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_7_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_8_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_9_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_10_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_11_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_12_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_13_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_14_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_15_output.mp4" type="video/mp4">
+    </video>
+    <!-- ...更多video... -->
+    <!-- 重要：为了循环滚动，建议把同样的视频片段再复制一遍 -->
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_1_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_2_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_3_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_4_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_5_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_6_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_7_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_8_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_9_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_10_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_11_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_12_output.mp4" type="video/mp4">  
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_13_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_short_14_output.mp4" type="video/mp4">
+    </video>
+    <video class="video-slide-scroll" playsinline autoplay loop muted>
+      <source src="./static/videos/water_space/water_space_medium_c_15_output.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+</section>  
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3" id="leaderboard-water">Leaderboard of Benchmark Evaluation in the <b>Ship Motion</b></h2>
+    <div class="table-container compact-table" style="overflow-x:auto;">
+      <table class="table is-bordered is-striped is-hoverable compact-table" style="width:auto;">
+        <caption style="text-align: justify;">
+          Evaluation of the <b>Ship Motion</b> using using <b>River</b> and <b>Ocean</b> videos, categorized by reasoning types: temporal, spatial, and intent reasoning. The background color transitions from <span style="color: lightblue; font-weight: bold;">light blue</span> to <span style="color: plum; font-weight: bold;">light purple</span>, indicating a gradual rise in task difficulty.
+          <!-- Evaluation of <b>Water Space</b> using <b>River</b> and <b>Ocean</b> Videos, categorized by reasoning types (temporal reasoning, spatial reasoning, intent reasoning). -->
+        </caption>
+        <colgroup>
+          <!-- <col style="width: 68px;">
+          <col style="width: 85px;">
+          <col style="width: 50px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;">
+          <col style="width: 80px;"> -->
+          <col class="col-diff" style="width: 68px;">
+          <col class="col-model" style="width: 85px;">
+          <col class="col-size" style="width: 50px;">
+          <col class="col-avg" style="width: 80px;">
+          <col class="col-short-avg" style="width: 80px;">
+          <col class="col-short-temp" style="width: 80px;">
+          <col class="col-short-spatial" style="width: 80px;">
+          <col class="col-short-intent" style="width: 80px;">
+          <col class="col-medium-avg" style="width: 80px;">
+          <col class="col-medium-temp" style="width: 80px;">
+          <col class="col-medium-spatial" style="width: 80px;">
+          <col class="col-medium-intent" style="width: 80px;">
+          <!-- <col class="col-long-avg" style="width: 80px;">
+          <col class="col-long-temp" style="width: 80px;">
+          <col class="col-long-spatial" style="width: 80px;">
+          <col class="col-long-intent" style="width: 80px;"> -->
+        </colgroup>
+        <thead class="cell-lightgray">
+          <tr>
+            <th rowspan="2">Difficulty</th>
+            <th rowspan="2">Models</th>
+            <th rowspan="2">Size</th>
+            <th rowspan="2">Over. Avg.</th>
+            <th colspan="4">River Scenarios</th>
+            <th colspan="4">Ocean Scenarios</th>
+          </tr>
+          <tr>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+            <th>Avg.</th><th>Temporal</th><th>Spatial</th><th>Intent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Hard -->
+          <tr><td rowspan="15" style="vertical-align: middle;">Hard</td>
+            <td class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5 🥇</a></td>
+            <td>-</td>
+            <td><b>38.36</b></td>
+            <td>48.72</td>
+            <td>46.15</td>
+            <td>30.77</td>
+            <td>69.23</td>
+            <td>28.00</td>
+            <td>30.00</td>
+            <td>32.00</td>
+            <td>22.00</td>
+          </tr>                           
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>22.10</td><td>28.20</td><td>38.46</td><td>26.92</td><td>19.23</td><td>16.00</td><td>18.00</td><td>18.00</td><td>12.00</td></tr>
+            <tr>
+              <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+              <td>-</td>
+              <td>29.64</td>
+              <td>34.62</td>
+              <td>23.08</td>
+              <td>34.62</td>
+              <td>46.15</td>
+              <td>24.67</td>
+              <td>38.0</td>
+              <td>16.0</td>
+              <td>20.0</td>
+            </tr>            
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>27.36</td>
+              <td>32.05</td>
+              <td>30.77</td>
+              <td>26.92</td>
+              <td>38.46</td>
+              <td>22.67</td>
+              <td>30.00</td>
+              <td>22.00</td>
+              <td>16.00</td>
+            </tr>
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+              <td>-</td>
+              <td>27.44</td>
+              <td>28.21</td>
+              <td>42.31</td>
+              <td>19.23</td>
+              <td>23.08</td>
+              <td>26.67</td>
+              <td>36.00</td>
+              <td>20.00</td>
+              <td>24.00</td>
+            </tr>
+            
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>26.02</td><td>26.92</td><td>23.08</td><td>30.77</td><td>26.92</td><td>25.11</td><td>34.00</td><td>20.93</td><td>20.41</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>25.44</td>
+            <td>28.20</td>
+            <td>19.23</td>
+            <td>19.23</td>
+            <td>46.15</td>
+            <td>22.67</td>
+            <td>26.0</td>
+            <td>22.0</td>
+            <td>20.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>22.54</td><td>23.08</td><td>15.38</td><td>19.23</td><td>34.62</td><td>22.00</td><td>18.00</td><td>28.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>21.90</td><td>21.79</td><td>7.69</td><td>26.92</td><td>30.77</td><td>22.00</td><td>16.00</td><td>28.00</td><td>22.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>20.92</td><td>20.51</td><td>19.23</td><td>19.23</td><td>23.08</td><td>21.33</td><td>16.00</td><td>26.00</td><td>22.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>14.39</td><td>11.54</td><td>7.69</td><td>19.23</td><td>7.69</td><td>15.33</td><td>8.0</td><td>30.0</td><td>8.0</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>14.00</td><td>16.67</td><td>15.38</td><td>23.08</td><td>11.54</td><td>11.33</td><td>8.00</td><td>20.00</td><td>6.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>15.67</td><td>16.67</td><td>11.54</td><td>26.92</td><td>11.54</td><td>14.67</td><td>8.00</td><td>28.00</td><td>8.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>13.39</td><td>14.10</td><td>7.69</td><td>23.08</td><td>11.54</td><td>12.67</td><td>8.0</td><td>24.0</td><td>6.0</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>14.67</td><td>16.67</td><td>7.69</td><td>30.77</td><td>11.54</td><td>12.67</td><td>6.00</td><td>24.00</td><td>8.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>14.34</td><td>16.67</td><td>15.38</td><td>19.23</td><td>15.38</td><td>12.00</td><td>12.00</td><td>22.00</td><td>2.00</td></tr> -->
+          <tr><td colspan="12"></td></tr>
+          <!-- Medium -->
+          <tr><td rowspan="15" style="vertical-align: middle;">Medium</td> 
+            <td  class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5  🥇</a></td>
+            <td>-</td>
+            <td><b>51.80</b></td>
+            <td>60.26</td>
+            <td>53.85</td>
+            <td>46.15</td>
+            <td>80.77</td>
+            <td>43.33</td>
+            <td>56.00</td>
+            <td>48.00</td>
+            <td>26.00</td>
+          </tr> 
+          <tr>             
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>38.49</td><td>42.31</td><td>50.00</td><td>53.85</td><td>23.08</td><td>34.67</td><td>36.00</td><td>48.00</td><td>20.00</td></tr>
+            <tr>
+              <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+              <td>-</td>
+              <td>41.77</td>
+              <td>44.87</td>
+              <td>30.77</td>
+              <td>61.54</td>
+              <td>42.31</td>
+              <td>38.67</td>
+              <td>48.0</td>
+              <td>46.0</td>
+              <td>22.0</td>
+            </tr>            
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>48.26</td>
+              <td>53.85</td>
+              <td>61.54</td>
+              <td>57.70</td>
+              <td>42.31</td>
+              <td>42.67</td>
+              <td>52.00</td>
+              <td>42.00</td>
+              <td>34.00</td>
+            </tr>
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+              <td>-</td>
+              <td>46.12</td>
+              <td>50.00</td>
+              <td>46.15</td>
+              <td>57.69</td>
+              <td>46.15</td>
+              <td>42.00</td>
+              <td>56.00</td>
+              <td>44.00</td>
+              <td>26.00</td>
+            </tr>
+            
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>46.31</td><td>53.84</td><td>46.15</td><td>65.38</td><td>50.00</td><td>38.78</td><td>34.00</td><td>49.02</td><td>33.33</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>38.62</td>
+            <td>35.90</td>
+            <td>34.62</td>
+            <td>50.0</td>
+            <td>23.08</td>
+            <td>41.33</td>
+            <td>42.0</td>
+            <td>54.0</td>
+            <td>28.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>41.77</td><td>44.87</td><td>30.77</td><td>57.69</td><td>46.15</td><td>38.67</td><td>24.00</td><td>62.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>41.08</td><td>46.15</td><td>34.62</td><td>61.54</td><td>42.31</td><td>36.00</td><td>34.00</td><td>60.00</td><td>14.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>44.36</td><td>48.72</td><td>23.08</td><td>65.38</td><td>57.69</td><td>40.00</td><td>28.00</td><td>60.00</td><td>32.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>20.88</td><td>23.08</td><td>11.54</td><td>38.46</td><td>19.23</td><td>18.67</td><td>10.00</td><td>30.00</td><td>16.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>21.92</td><td>20.51</td><td>19.23</td><td>26.92</td><td>15.38</td><td>23.33</td><td>20.00</td><td>30.00</td><td>20.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>22.54</td><td>23.08</td><td>19.23</td><td>30.77</td><td>19.23</td><td>22.00</td><td>14.00</td><td>34.00</td><td>18.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>33.31</td><td>34.62</td><td>19.23</td><td>50.00</td><td>34.62</td><td>32.00</td><td>20.00</td><td>50.00</td><td>26.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>24.08</td><td>29.49</td><td>19.23</td><td>30.77</td><td>38.46</td><td>18.67</td><td>18.00</td><td>26.00</td><td>12.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>28.08</td><td>29.49</td><td>23.08</td><td>53.85</td><td>11.54</td><td>26.67</td><td>18.00</td><td>44.00</td><td>18.00</td></tr> -->
+          <tr><td colspan="12"></td></tr>
+          <!-- Easy -->
+          <tr><td rowspan="15" style="vertical-align: middle;">Easy</td> 
+            <td class="model-gold"><a href="https://openai.com/index/introducing-gpt-5/">GPT 5 🥇</a></td>
+            <td>-</td>
+            <td><b>63.00</b></td>
+            <td>66.67</td>
+            <td>61.54</td>
+            <td>50.00</td>
+            <td>88.46</td>
+            <td>59.33</td>
+            <td>78.00</td>
+            <td>48.00</td>
+            <td>52.00</td>
+          </tr>   
+          <tr>                    
+            <td><a href="https://arxiv.org/pdf/2410.21276">GPT 4o</a></td><td>-</td><td>50.51</td><td>57.69</td><td>57.69</td><td>50.00</td><td>65.38</td><td>43.33</td><td>66.00</td><td>34.00</td><td>30.00</td></tr>
+            <tr>
+              <td><a href="https://deepmind.google/models/gemini/pro/">Gemini 2.5 Pro</a></td>
+              <td>-</td>
+              <td>61.05</td>
+              <td>64.10</td>
+              <td>57.69</td>
+              <td>57.69</td>
+              <td>76.92</td>
+              <td>58.00</td>
+              <td>72.0</td>
+              <td>50.0</td>
+              <td>52.0</td>
+            </tr>            
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash think</a></td>
+              <td>-</td>
+              <td>62.03</td>
+              <td>65.39</td>
+              <td>80.77</td>
+              <td>42.31</td>
+              <td>73.08</td>
+              <td>58.67</td>
+              <td>70.00</td>
+              <td>52.00</td>
+              <td>54.00</td>
+            </tr>
+            <tr>
+              <td><a href="https://storage.googleapis.com/model-cards/documents/gemini-2.5-flash.pdf">Gemini 2.5 flash no-think</a></td>
+              <td>-</td>
+              <td>58.18</td>
+              <td>57.69</td>
+              <td>57.69</td>
+              <td>38.46</td>
+              <td>76.92</td>
+              <td>58.67</td>
+              <td>80.00</td>
+              <td>42.00</td>
+              <td>54.00</td>
+            </tr>
+            
+          <tr><td><a href="https://arxiv.org/pdf/2403.05530">Gemini 1.5 Pro</a></td><td>-</td><td>50.69</td><td>52.56</td><td>42.31</td><td>61.54</td><td>53.85</td><td>48.81</td><td>50.00</td><td>46.43</td><td>50.00</td></tr>
+          <tr>
+            <td><a href="https://www.anthropic.com/news/claude-3-5-sonnet">Claude 3.5</a></td>
+            <td>-</td>
+            <td>49.39</td>
+            <td>47.44</td>
+            <td>50.0</td>
+            <td>53.85</td>
+            <td>38.46</td>
+            <td>51.33</td>
+            <td>62.0</td>
+            <td>52.0</td>
+            <td>40.0</td>
+          </tr>          
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-26B">InternVL2.5</a></td><td>26B</td><td>55.05</td><td>64.10</td><td>65.38</td><td>57.69</td><td>69.23</td><td>46.00</td><td>50.00</td><td>50.00</td><td>38.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-8B">InternVL2.5</a></td><td>8B</td><td>53.47</td><td>60.26</td><td>69.23</td><td>46.15</td><td>65.38</td><td>46.67</td><td>46.00</td><td>54.00</td><td>40.00</td></tr>
+          <tr><td><a href="https://huggingface.co/OpenGVLab/InternVL2_5-4B">InternVL2.5</a></td><td>4B</td><td>53.87</td><td>56.41</td><td>53.85</td><td>57.69</td><td>57.69</td><td>51.33</td><td>52.00</td><td>56.00</td><td>46.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-next-qwen-32b">LLaVA Next</a></td><td>32B</td><td>35.59</td><td>37.18</td><td>26.92</td><td>53.85</td><td>30.77</td><td>34.00</td><td>30.00</td><td>38.00</td><td>34.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/LLaVA-Video-7B-Qwen2">LLaVA Video</a></td><td>7B</td><td>31.03</td><td>32.05</td><td>30.77</td><td>34.62</td><td>30.77</td><td>30.00</td><td>22.00</td><td>38.00</td><td>30.00</td></tr>
+          <tr><td><a href="https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov">LLaVA OneVision</a></td><td>7B</td><td>33.00</td><td>33.33</td><td>34.62</td><td>34.62</td><td>30.77</td><td>32.67</td><td>28.00</td><td>38.00</td><td>32.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct">Qwen2.5 VL</a></td><td>32B</td><td>52.77</td><td>61.54</td><td>53.85</td><td>61.54</td><td>69.23</td><td>44.00</td><td>40.00</td><td>54.00</td><td>38.00</td></tr>
+          <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">Qwen2.5 VL</a></td><td>7B</td><td>31.31</td><td>34.62</td><td>38.46</td><td>19.23</td><td>46.15</td><td>28.00</td><td>36.00</td><td>22.00</td><td>26.00</td></tr>
+          <!-- <tr><td><a href="https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct">Qwen2.5 VL</a></td><td>3B</td><td>40.21</td><td>39.74</td><td>34.62</td><td>46.15</td><td>38.46</td><td>40.67</td><td>34.00</td><td>48.00</td><td>40.00</td></tr> -->
+          
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+    <!-- Opportunities. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Opportunities!</h2>
+        <ul style="text-align: justify;">
+          <li>
+            <b>1. Long-Horizon Temporal Reasoning:</b>
+            Future work can explore models with stronger memory and temporal abstraction capabilities to handle long-duration videos with multiple events and delayed causal effects, especially in air and water scenarios.
+          </li>
+          <li>
+            <b>2. Generalization Across Domains and Modalities:</b>
+            Cross-domain generalization—from land to air or water—and transfer learning across modalities (e.g., combining video, text, and audio) remain underexplored and crucial for building versatile systems.
+          </li>
+          <li>
+            <b>3. Safety-Aware and Verifiable Reasoning:</b>
+            Given the high-stakes nature of open-space applications (e.g., autonomous driving or aircraft control), future benchmarks and methods should integrate safety constraints and provide interpretable or verifiable reasoning processes.
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+</section>
+
+
+
+
+
+<footer class="custom_footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p> -->
+          <p style="font-size: 0.820rem;">
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
