@@ -1,4 +1,5 @@
-# https://accident-bench.github.io/
+# https://ai-agent-frontier-seminar.github.io
+
 
 
 # Website License
